@@ -35,6 +35,7 @@ public class ListCommand implements Command {
 
         i.output("=== Nexus Commands with Help and Aliases ===");
         String buffer = "  ";
+        list = new ArrayList<String>();
 
         for(Class<? extends Command> cc : cmds) {
             try {
@@ -58,16 +59,8 @@ public class ListCommand implements Command {
 
         i.output("There is a total of " + size + " commands!");
         i.output("Use /help <command> for help with a particular command!");
-        String a = null;
 
-        for(int ii = 0; ii < list.size(); ii++) {
-            a += list.get(ii);
-            if(ii != list.size() - 1) a += ", ";
-        }
-
-        a = a.replaceAll("null", "");
-        i.output("Commands: " + a);
-        a = null;
+        i.output("Commands: " + list.toString());
 
     }
 

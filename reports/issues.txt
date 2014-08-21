@@ -1,6 +1,6 @@
 
 ---------------------------------
-Report ID: NEXUS-1547
-Report Date: Wed 20 Aug 2014 - 20:37:34 PM (MDT)
-Description: This is an example report 
+Report ID: NEXUS-8211
+Report Date: Thu 21 Aug 2014 - 06:44:40 AM (MDT)
+Description: The list command repeats commands each time command is executed. (Affects: ListCommand.java)
 ---------------------------------

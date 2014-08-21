@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class BugCommand implements Command {
 
-    String[] help = {"Begins Nexus!", "No command to start, simple say 'Hello'!"};
+    String[] help = {"Reports a bug.", "/report [description of the issue]"};
     String[] aliases = {"bug", "breport", "bugreport"};
 
     public void execute(String[] args) {

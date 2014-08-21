@@ -25,8 +25,10 @@ public class ListCommand implements Command {
     int size = 0;
     Input i = null;
 
+    boolean hasArgs = false;
 
     public void execute(String[] args) throws CommandSyntaxException {
+        if(args != null) hasArgs = true;
         i = Input.getCurrentInstance();
         Reflections reflections = new Reflections("com.atomic.nexus.commands");
         Set<Class<? extends Command>> cmds = reflections.getSubTypesOf(Command.class);

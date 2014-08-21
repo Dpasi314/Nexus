@@ -99,9 +99,6 @@ public class Input extends JFrame implements KeyListener {
 
             String[] args = CommandHelper.getArgs(command);
 
-            if(args == null) {
-               // args = new String[]
-            }
             String Icommand = CommandHelper.getRoot(command).replace("/", "");
 
             Command c = CommandManager.getCommand(Icommand);

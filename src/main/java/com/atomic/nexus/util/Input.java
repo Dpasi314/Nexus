@@ -106,7 +106,7 @@ public class Input extends JFrame implements KeyListener {
             if(c == null) {
                 c = CommandManager.getCommandFromAlias(Icommand);
                 if(c == null) {
-                    throw new UnknownCommandException("ERROR: The command \"" + command + "\" is unknown. Type /list for a command list!");
+                    throw new UnknownCommandException("The command \"" + command + "\" is unknown. Type /list for a command list!", this.getClass());
                 }
             }
 
@@ -117,6 +117,14 @@ public class Input extends JFrame implements KeyListener {
 
     public void output(String string) {
         textArea.append(string + System.getProperty("line.separator"));
+    }
+
+    public void err(String string, Class clazz) {
+        textArea.append("\n === Nexus Error Information (Start) ===\n");
+        textArea.append(string + System.getProperty("line.separator"));
+        textArea.append("Error at: " + clazz.getClass().getName() + "\n");
+        textArea.append("=== Nexus Error Information (End) === \n");
+        textArea.append("\n");
     }
 
 

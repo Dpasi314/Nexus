@@ -19,7 +19,7 @@ public class StopCommand implements Command {
 
     public void execute(String[] args) throws CommandSyntaxException {
         if(args.length > 2) {
-            throw new CommandSyntaxException("Command Syntax - shutdown [-d, -e] [int exit code]");
+            throw new CommandSyntaxException("Command Syntax - shutdown [-d, -e] [int exit code]", this.getClass());
         }
 
         if(args.length >= 1 && args.length < 3) {

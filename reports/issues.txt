@@ -3,4 +3,13 @@
 Report ID: NEXUS-8211
 Report Date: Thu 21 Aug 2014 - 06:44:40 AM (MDT)
 Description: The list command repeats commands each time command is executed. (Affects: ListCommand.java)
+Status: FIXED
 ---------------------------------
+
+---------------------------------
+Report ID: NEXUS-3877
+Report Date: Thu 21 Aug 2014 - 18:18:44 PM (MDT)
+Description: Messages are not all set up with line separators set up. 
+Status: FIXED
+---------------------------------
+

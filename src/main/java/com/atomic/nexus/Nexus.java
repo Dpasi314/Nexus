@@ -2,6 +2,7 @@ package com.atomic.nexus;
 
 import com.atomic.nexus.commands.util.Command;
 import com.atomic.nexus.commands.util.CommandManager;
+import com.atomic.nexus.util.HeartBeat;
 import com.atomic.nexus.util.Input;
 import org.reflections.Reflections;
 
@@ -34,6 +35,8 @@ public class Nexus {
         Input i = new Input("Nexus", 300, 300);
         i.createWindow();
         i.display();
+
+        new HeartBeat();
 
 
     }

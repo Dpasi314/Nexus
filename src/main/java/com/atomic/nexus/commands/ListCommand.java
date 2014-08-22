@@ -61,6 +61,7 @@ public class ListCommand implements Command {
         i.output("Use /help <command> for help with a particular command!");
 
         i.output("Commands: " + list.toString());
+        i.output("\n");
 
     }
 
@@ -70,6 +71,7 @@ public class ListCommand implements Command {
         Command c = CommandManager.getCommand(arg);
         if(c == null) {
             i.output("The command \"" + arg + "\" isn't known. Type /list for a command list!");
+            i.output("\n");
             return;
         }
 
@@ -77,6 +79,7 @@ public class ListCommand implements Command {
         i.output("Extended Help: " + Arrays.toString(c.getHelp()));
         i.output("Aliases: " + Arrays.toString(c.getAliases()));
         i.output("Minimum Authority: " + c.getAuthority());
+        i.output("\n");
     }
 
     public String[] getHelp() {

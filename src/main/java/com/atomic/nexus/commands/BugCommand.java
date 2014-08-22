@@ -48,12 +48,16 @@ public class BugCommand implements Command {
         p.print("Report ID: " + ID + "\n");
         p.print("Report Date: " + sd.format(date) + "\n");
         p.print("Description: " + desc.replaceAll("null", "") + "\n");
+        p.print("Status: WAITING" + "\n");
         p.print("---------------------------------" + "\n");
         p.close();
 
         Input i = Input.getCurrentInstance();
-        i.output("Bug Report, " + ID + " was successfully created!");
-
+        i.output("=== Nexus Bug Report (" + ID + ") ===");
+        i.output("The Bug Report, " + ID + ", was successfully created!");
+        i.output("This report will be reviewed shortly! Thanks for making Nexus Better!");
+        i.output("=== Nexus Bug Report (END) ===");
+        i.output("\n");
     }
 
     public String[] getHelp() {

@@ -17,6 +17,10 @@ public class BugCommand implements Command {
     String[] help = {"Reports a bug.", "/report [description of the issue]"};
     String[] aliases = {"bug", "breport", "bugreport"};
 
+    /**
+     * Created a bug report.
+     * @param args - Command arguments
+     */
     public void execute(String[] args) {
 
         String desc = null;

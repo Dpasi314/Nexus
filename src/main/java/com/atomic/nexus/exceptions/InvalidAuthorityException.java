@@ -7,6 +7,11 @@ import com.atomic.nexus.util.Input;
  */
 public class InvalidAuthorityException extends Exception {
 
+    /**
+     * Exception to handle improper authority attempts
+     * @param message
+     * @param clazz
+     */
     public InvalidAuthorityException(String message, Class clazz) {
         super("[Nexus] " + message);
         Input i = Input.getCurrentInstance();

@@ -10,6 +10,11 @@ public class CommandHelper {
 
     public CommandHelper() { }
 
+    /**
+     * Returns a boolean (If the command has args or not)
+     * @param command
+     * @return boolean
+     */
     public static boolean hasArgs(String command) {
         String[] args = command.split(" ");
         if(args.length >= 1) {
@@ -19,6 +24,12 @@ public class CommandHelper {
         }
     }
 
+    /**
+     * Returns String array of all the arguments in a command
+     * Excludes the command itself; easier for the command class to parse.
+     * @param command
+     * @return String[]
+     */
     public static String[] getArgs(String command) {
         String[] x = {};
         command = command.replaceAll("/[a-zA-Z]* ", "");
@@ -33,6 +44,11 @@ public class CommandHelper {
     }
 
 
+    /**
+     * Returns the root command; no arguments
+     * @param command
+     * @return String
+     */
     public static String getRoot(String command) {
         String[] args = command.split(" ");
 

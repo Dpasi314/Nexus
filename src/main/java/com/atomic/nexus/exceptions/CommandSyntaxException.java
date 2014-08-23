@@ -7,6 +7,11 @@ import com.atomic.nexus.util.Input;
  */
 public class CommandSyntaxException extends Exception {
 
+    /**
+     * Exception for a command with Invalid Command Syntax.
+     * @param message
+     * @param clazz
+     */
     public CommandSyntaxException(String message, Class clazz) {
         super("[Nexus] " + message);
         Input i = Input.getCurrentInstance();

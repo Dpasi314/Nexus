@@ -17,16 +17,47 @@ import java.util.Arrays;
  */
 public class Input extends JFrame implements KeyListener {
 
+    /**
+     * The JFrame for the GUI
+     */
     JFrame frame = null;
+
+    /**
+     * TextAreas for the User to type and Nexus to respond.
+     */
     JTextArea textArea = null, userInput = null;
+
+    /**
+     * Panels where the TextAreas will be located
+     */
     JPanel upper = null, lower = null;
+
+    /**
+     * The title before Nexus' TextArea
+     */
     String buffer = "                                               \n\n";
+
+    /**
+     * The label before Nexus' TextArea
+     */
     JLabel textLabel = new JLabel(buffer + "This is where Nexus will respond!");
 
+    /**
+     * Current instance of the Input class; Used to call the Output method since this will never be null
+     */
     private static Input currentInstance = null;
 
+    /**
+     * Width, Height
+     */
     int w, h;
 
+    /**
+     * Initialization of the GUI
+     * @param windowName
+     * @param width
+     * @param height
+     */
     public Input(String windowName, int width, int height) {
 
         frame = new JFrame(windowName);
@@ -52,10 +83,17 @@ public class Input extends JFrame implements KeyListener {
 
     }
 
+    /**
+     * Returns current instance to call the Output method
+     * @return Input
+     */
     public static Input getCurrentInstance() {
         return currentInstance;
     }
 
+    /**
+     * Creates the window and the GUI
+     */
     public void createWindow() {
         frame.getContentPane().add(upper, "North");
         frame.getContentPane().add(textLabel);
@@ -79,10 +117,18 @@ public class Input extends JFrame implements KeyListener {
         //textArea.append(getContent(1));
     }
 
+    /**
+     * Displays the GUI
+     */
     public void display() {
         frame.setVisible(true);
     }
 
+    /**
+     * Reads and parses the input of the UserArea
+     * Currently only contains commands and whatnot.
+     * @throws UnknownCommandException
+     */
     public void read() throws UnknownCommandException {
 
         /**
@@ -115,10 +161,19 @@ public class Input extends JFrame implements KeyListener {
         }
     }
 
+    /**
+     * Outputs things into the Nexus text area.
+     * @param string
+     */
     public void output(String string) {
         textArea.append(string + System.getProperty("line.separator"));
     }
 
+    /**
+     * Sends an error to the Nexus console
+     * @param string
+     * @param clazz
+     */
     public void err(String string, Class clazz) {
         textArea.append("\n === Nexus Error Information (Start) ===\n");
         textArea.append(string + System.getProperty("line.separator"));
@@ -157,6 +212,12 @@ public class Input extends JFrame implements KeyListener {
 
     }
 
+    /**
+     * Not needed anymore!
+     * @param area
+     * @return
+     */
+    @Deprecated
     public String getContent(int area) {
         /**
          * 0 = USER

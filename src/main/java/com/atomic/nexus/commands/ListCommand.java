@@ -27,6 +27,11 @@ public class ListCommand implements Command {
 
     boolean hasArgs = false;
 
+    /**
+     * Lists all registered commands, and their extended help, alias, and authority
+     * @param args - Command arguments
+     * @throws CommandSyntaxException
+     */
     public void execute(String[] args) throws CommandSyntaxException {
         if(args != null) hasArgs = true;
         i = Input.getCurrentInstance();
@@ -65,8 +70,10 @@ public class ListCommand implements Command {
 
     }
 
-
-
+    /**
+     * Outputs the current help for a particular command
+     * @param arg
+     */
     public void getHelpFor(String arg) {
         Command c = CommandManager.getCommand(arg);
         if(c == null) {

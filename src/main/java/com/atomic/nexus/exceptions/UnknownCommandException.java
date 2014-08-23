@@ -7,6 +7,11 @@ import com.atomic.nexus.util.Input;
  */
 public class UnknownCommandException extends Exception {
 
+    /**
+     * Exception to handle an unknown command
+     * @param message
+     * @param clazz
+     */
     public UnknownCommandException(String message, Class clazz) {
         super("[Nexus] " + message);
         Input i = Input.getCurrentInstance();

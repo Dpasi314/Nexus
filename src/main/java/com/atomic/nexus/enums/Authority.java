@@ -5,9 +5,39 @@ package com.atomic.nexus.enums;
  */
 public enum Authority {
 
+    /**
+     * Dante Pasionek - ONLY
+     */
     ADMINISTRATOR,
 
+    /**
+     * Any user
+     */
     USER,
 
-    NEXUS_ONLY
+    /**
+     * Nexus - ONLY
+     */
+    NEXUS_ONLY;
+
+    /**
+     * For login purposes
+     */
+    Authority currentAuth = USER;
+
+    /**
+     * Essentially logs in
+     * @param auth
+     */
+    public void setAuthority(Authority auth) {
+        currentAuth = auth;
+    }
+
+    /**
+     * Returns the current user's authority.
+     * @return Authority
+     */
+    public Authority getAuth() {
+        return currentAuth;
+    }
 }

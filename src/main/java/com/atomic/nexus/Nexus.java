@@ -16,13 +16,22 @@ import java.util.Set;
 
 public class Nexus {
 
+    /**
+     * The current alive instance of Nexus.
+     */
+
     private static Nexus instance = null;
 
     /**
-     * Register all commands here first!
+     * List<Command> - List of all registered commands.
      */
     private static List<Command> commands = new ArrayList<>();
 
+
+    /**
+     * Main method, initializes Nexus
+     * @param args
+     */
     public static void main(String[] args) {
         try {
             instance = Nexus.class.newInstance();
@@ -40,19 +49,35 @@ public class Nexus {
 
 
     }
+
+    /**
+     * Nulls the current instance of Nexus, used for program termination.
+     */
     public void nullInstance() {
         instance = null;
     }
 
 
+    /**
+     * @return Nexus - Returns current instance of Nexus that was set in the main
+     */
     public static Nexus getInstance() {
         return instance;
     }
 
+    /**
+     * Deprecated - CommandManager handles this need.
+     * @return List<Command> returns a list of all registered commands. Not needed.
+     */
+    @Deprecated
     public static List<Command> getAllRegisteredCommands() {
         return commands;
     }
 
+    /**
+     * Registers all commands. Command classes implement the class command#util#Command.java
+     * Method searches for those classes, and then registeres them in the CommandManager.java class
+     */
     private static void register() {
         Reflections reflections = new Reflections("com.atomic.nexus.commands");
         Set<Class<? extends Command>> cmds = reflections.getSubTypesOf(Command.class);
@@ -68,7 +93,18 @@ public class Nexus {
         }
     }
 
+    /**
+     * Because test.
+     */
     public static void test() {
 
+    }
+
+    /**
+     * Ping method the HeartBeat class uses to check if the program is responding.
+     * @return String - Pong!
+     */
+    public static String ping() {
+        return "pong";
     }
 }

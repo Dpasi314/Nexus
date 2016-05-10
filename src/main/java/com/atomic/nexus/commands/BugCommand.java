@@ -30,7 +30,7 @@ public class BugCommand implements Command {
 
         String ID = "NEXUS-" + getRandom();
 
-        File file = new File("reports/issues.txt");
+        File file = new File("reports/reports.data");
         if(!file.exists()) {
             try {
                 file.getAbsoluteFile().createNewFile();
